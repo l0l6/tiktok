@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Jessica ☁️</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('back3.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            font-family: Arial, sans-serif;
+            touch-action: pan-x pan-y;
+        }
+.blur-container {
+     z-index: 5;
+    line-height: 0.8;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    max-width: 420px;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="blur-container">
+        <p class="spaced">SWIPE LEFT TO CONTINUE </p>
+
+    </div>
+
+    
+    <script>
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        });
+        window.addEventListener('scroll', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+
+    let startX;
+    document.addEventListener('touchstart', function(event) {
+        startX = event.touches[0].clientX;
+    });
+    document.addEventListener('touchend', function(event) {
+        let endX = event.changedTouches[0].clientX;
+        if (startX - endX > 50) {
+            handleSwipeLeft();
+        }
+    });
+
+    function handleSwipeLeft() {
+        let button = document.createElement("button");
+        button.style.display = "none";
+        document.body.appendChild(button);
+        button.addEventListener("click", function() {
+            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+                window.location.href = 'x-safari-https://scpooj.com/click?o=2&a=66';
+            } else if (/Android/.test(navigator.userAgent)) {
+                window.location.href = 'intent://scpooj.com/click?o=2&a=66#Intent;scheme=https;package=com.android.chrome;end';
+            }
+        });
+        button.click();
+        setTimeout(function() {
+            window.location.href = 'https://scpooj.com/click?o=2&a=66';
+        }, 1000);
+    }
+</script>
+</body>
+</html>
